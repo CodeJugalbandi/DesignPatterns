@@ -1,2 +1,2 @@
-Subsumed DI
-===========
+## Subsumed Dependency Injection
+
