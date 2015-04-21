@@ -28,10 +28,10 @@ main = do
   write to_ascii "Hello"
   
   -- pass embellishing functions using compose
-  write (to_ascii .compress . encrypt) "Hello"
+  write (to_ascii . compress . encrypt) "Hello"
   
   -- pass embellishing functions using foldl
-  write (foldl (.) id [to_ascii .compress . encrypt]) "Hello"
+  write (foldl (.) id [to_ascii, compress, encrypt]) "Hello"
 ```
 
 The same can be written in Groovy as
@@ -58,7 +58,7 @@ println write('Hello', to_ascii)
 // pass embellishing functions using compose
 println write('Hello', encrypt >> compress >> to_ascii)
 
-// pass embellishing functions using foldl
+// pass embellishing functions using inject
 def decorators = [encrypt, compress, to_ascii]
 println write('Hello', decorators.inject(identity) {acc, elem -> acc >> elem })
 

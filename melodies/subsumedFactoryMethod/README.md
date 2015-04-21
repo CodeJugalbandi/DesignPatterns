@@ -47,7 +47,7 @@ In Scala,
 val power = x => raiseTo => Math.pow(x, raiseTo)
 
 //this could be in one scope
-val square = power(3.0)
+val square = power(2.0)
 
 //application done in a different scope
 square(2.0) // 4.0
@@ -56,6 +56,19 @@ val cube = power(3.0)
 cube(2.0)  // 8.0
 ```
 
+Using explicit currying syntax of Scala
+
+```
+def power(raiseTo: Double)(x: Double) = Math.pow(x, raiseTo)
+
+val square = power(2.0) _
+
+//application done in a different scope
+square(2.0) // 4.0
+
+val cube = power(3.0) _
+cube(2.0)  // 8.0
+```
 We have seen currying always spices up things you do with functions :)
 
 
