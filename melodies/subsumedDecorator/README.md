@@ -31,7 +31,9 @@ main = do
   write (to_ascii . compress . encrypt) "Hello"
   
   -- pass embellishing functions using foldl
-  write (foldl (.) id [to_ascii, compress, encrypt]) "Hello"
+  write (foldl (.) id decorators) "Hello"
+    where
+      decorators = [to_ascii, compress , encrypt]
 ```
 
 The same can be written in Groovy as
