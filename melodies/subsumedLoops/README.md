@@ -48,6 +48,11 @@ List('a', 'b') flatMap(c => List(1, 2) map(n => (c, n)))
 // List((a,1), (a,2), (b,1), (b,2))
 ```
 
+In Clojure, the same could be written as:
+```
+(mapcat (fn [n] (map (fn [c] [c n]) ['a' 'b'])) [1 2])
+```
+
 In Haskell, its called the bind operator.
 
 ```
@@ -70,7 +75,7 @@ for {
 In Haskell, its list comprehension
 
 ```
-[(c, n) | c <- ['a', 'b'], n <- [1, 2]]
+print [(c, n) | c <- ['a', 'b'], n <- [1, 2]]
 
 -- [('a',1),('a',2),('b',1),('b',2)]
 ```
