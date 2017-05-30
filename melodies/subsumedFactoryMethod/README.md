@@ -3,7 +3,7 @@
 The GOF design pattern book describes Factory Method pattern as - 
 > Define an interface for creating an object, but let subclasses decide which class to instantiate.  Factory method lets a class defer instantiation to subclasses
 
-In the context of functional programming, taking the pattern in the spirit and not structurally,    the ability to return functions from within functions, exhibits a factory method pattern in use.  
+In the context of functional programming, taking the pattern in the spirit and not structurally, the ability to return functions from within functions, exhibits a factory method pattern in use.  
 
 For example, lets look at Java8, the power function returns a function that can be utilized to create a square function or a cube function.
 
