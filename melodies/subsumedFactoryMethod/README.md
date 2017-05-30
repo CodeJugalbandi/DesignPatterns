@@ -69,7 +69,21 @@ square(2.0) // 4.0
 val cube = power(3.0) _
 cube(2.0)  // 8.0
 ```
+
+In Haskell, as functions are curried by default, we have no special syntax like scala
+
+```
+power :: (Num a, Integral b) => b -> a -> a
+power raiseTo number = number^raiseTo
+square = power 2
+cube = power 3
+square 2 -- 4
+cube 2   -- 8
+
+```
+
 We have seen currying always spices up things you do with functions :)
+
 
 
 
