@@ -3,7 +3,7 @@
 ### Time another function
 In Java8, lets say we want to time a 1-arg function:
 
-```
+```java
 public <T, R> Function<T, R> time(Function<T, R> fn) {
   return t -> {
     long startTime = System.currentTimeMillis();
@@ -25,7 +25,7 @@ Function<Integer, Integer> expensiveSquare = x -> {
 
 In Groovy, we could time an var-args function like this:
 
-```
+```groovy
 def time(Closure fn) {
   return { ...args ->
     long startTime = System.currentTimeMillis()

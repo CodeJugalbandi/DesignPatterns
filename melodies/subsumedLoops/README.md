@@ -4,7 +4,7 @@
 
 With the ability to pass functions around, we don't need looping constructs, expressed as keywords in language like - for, while-do, repeat-until, do-while.  Instead, we can just pass a function.  For example, in Java8, we could do:
 
-```
+```java
 void iterate(int times, Runnable body) {
   if (times <= 0) {
     return;
@@ -25,7 +25,7 @@ The above is a simplified iteration without a predicate, but you get the idea.
 
 With the ability to flatMap on Collections, we can eliminate nested loops.  For example, in Java8, one can use Stream to generate combinations.
 
-```
+```java
 List<List<?>> combinations(List<?> one, List<?> two) {
   return one.stream()
             .flatMap(f -> 
@@ -42,20 +42,21 @@ System.out.println(combo); // [[a, 1], [a, 2], [b, 1], [b, 2]]
 
 In Scala, the same could be written as
 
-```
+```scala
 List('a', 'b') flatMap(c => List(1, 2) map(n => (c, n)))
 
 // List((a,1), (a,2), (b,1), (b,2))
 ```
 
 In Clojure, the same could be written as:
-```
+
+```clojure
 (mapcat (fn [n] (map (fn [c] [c n]) ['a' 'b'])) [1 2])
 ```
 
 In Haskell, its called the bind operator.
 
-```
+```haskell
 ['a', 'b'] >>= \c -> [1, 2] >>= \n -> [(c, n)]
 -- [('a',1),('a',2),('b',1),('b',2)]
 
@@ -63,7 +64,7 @@ In Haskell, its called the bind operator.
 
 Both, Scala and Haskell provide what is called as comprehensions to make the above more readable.  In Scala, its the for-comprension
 
-```
+```scala
 for {
   c <- List('a', 'b')
   n <- List(1, 2)
@@ -74,7 +75,7 @@ for {
 
 In Haskell, its list comprehension
 
-```
+```haskell
 print [(c, n) | c <- ['a', 'b'], n <- [1, 2]]
 
 -- [('a',1),('a',2),('b',1),('b',2)]

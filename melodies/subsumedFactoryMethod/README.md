@@ -7,7 +7,7 @@ In the context of functional programming, taking the pattern in the spirit and n
 
 For example, lets look at Java8, the power function returns a function that can be utilized to create a square function or a cube function.
 
-```
+```java
 Function<Double, Double> power(double raiseTo) {
    return x -> Math.pow(x, raiseTo);
 }
@@ -25,7 +25,7 @@ Also to be more precise the above example is a variant of factory method pattern
 
 Additionally if we use Currying or Partial Function Application, we can wire in parameters to a parameterized factory method from different scopes.  In Java8,
 
-```
+```java
 Function<Double, Function<Double, Double>> power() {
    return raiseTo -> x -> Math.pow(x, raiseTo);
 }
@@ -43,7 +43,7 @@ cube.apply(2.0);  // 8.0
 
 In Scala,
 
-```
+```scala
 val power = x => raiseTo => Math.pow(x, raiseTo)
 
 //this could be in one scope
@@ -58,7 +58,7 @@ cube(2.0)  // 8.0
 
 Using explicit currying syntax of Scala
 
-```
+```scala
 def power(raiseTo: Double)(x: Double) = Math.pow(x, raiseTo)
 
 val square = power(2.0) _
@@ -72,7 +72,7 @@ cube(2.0)  // 8.0
 
 In Haskell, as functions are curried by default, we have no special syntax like scala
 
-```
+```haskell
 power :: (Num a, Integral b) => b -> a -> a
 power raiseTo number = number^raiseTo
 square = power 2

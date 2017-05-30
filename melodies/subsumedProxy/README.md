@@ -8,7 +8,7 @@ For memoization to work, the function that is being wrapped must be a pure funct
 
 Lets use Clojure this time around to make this happen.
 
-```
+```clojure
 (defn add [x y] 
   (do (println (str "add called with x = " x ", y = " y))
     (+ x y)))
@@ -27,7 +27,7 @@ Lets use Clojure this time around to make this happen.
 
 Though memoization is also available in Groovy, lets implement and see it in action ourselves.
 
-```
+```groovy
 def memoize(Closure fn) {
   def map = [:]
   return { ...args -> 

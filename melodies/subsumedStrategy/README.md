@@ -3,7 +3,7 @@
 
 Its common in retail banking to find maker and a checker for creating and approving transactions.  Sometimes transactions above certain financial limit, requires 2 checkers instead of 1.  Below is how this can be implemented as a Strategy in C# using the Object Oriented approach.
 
-```
+```java
 class Maker { }
 class Checker { }
 interface Transaction { }
@@ -51,7 +51,7 @@ Transactions.Approve(transactions, approvalStrategy);
 
 The same can be achieved in C# by getting rid of the Approval Strategy interface, instead using function to pass around instead of interface.
 
-```
+```csharp
 class Maker { }
 class Checker { }
 interface Transaction { }
