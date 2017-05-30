@@ -5,7 +5,7 @@ The GOF says that with Decorator you can
 
 In functional programming, we can easily achieve this with the ability to compose embellishing functions and pass the composed function.  This time lets see this in action in Haskell.
 
-```
+```haskell
 
 compress :: String -> String
 compress str = "compressed " ++ str
@@ -38,7 +38,7 @@ main = do
 
 The same can be written in Groovy as
 
-```
+```groovy
 def compress = { str -> "compressed $str" }
 
 def encrypt  = { str -> "encrypted $str" }
