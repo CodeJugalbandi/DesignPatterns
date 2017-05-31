@@ -1,9 +1,11 @@
 ## Subsumed Template Method
 
 The GOF design pattern book describes Template Method pattern as - 
-> Define an interface for creating an object, but let subclasses decide which class to instantiate.  Factory method lets a class defer instantiation to subclasses
 
-In the context of functional programming, taking the pattern in the spirit and not structurally, the ability to pass functions to functions, exhibits a factory method pattern in use.  
+> Define the skeleton of an algorithm in an operation, deferring somesteps to
+subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure. 
+
+In the context of functional programming, applying the pattern in the spirit and not structurally; with the ability to pass functions to functions subsumes this pattern.  
 
 Lets start with a Java program
 
@@ -38,7 +40,7 @@ class ConsoleLogger extends Logger {
 public static void main(String[] args) throws Exception {
   Logger db = new DatabaseLogger("url");
   db.log(Logger.Level.INFO, "Hello");
-  Logger console = new ConsoleLogger("filename");
+  Logger console = new ConsoleLogger();
   console.log(Logger.Level.INFO, "Hello");
 }
 ```
